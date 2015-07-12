@@ -1,4 +1,4 @@
-package com.korsander.followgit;
+package ru.korsander.followgit;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
