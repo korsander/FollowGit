@@ -15,10 +15,10 @@
         app:popupTheme="@style/ActionBarPopupThemeOverlay">
     </android.support.v7.widget.Toolbar>
 
-    <fragment android:id="@+id/fragment"
-        tools:layout="@layout/fragment_main"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/toolbar"
-        android:name = "ru.korsander.followgit.fragment.MainActivityFragment"/>
+        android:id="@+id/container">
+    </FrameLayout>
 </RelativeLayout>

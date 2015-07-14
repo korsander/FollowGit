@@ -2,6 +2,7 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="searchViewStyle">@style/AppSearchViewStyle</item>
     </style>
 
     <style name="AppTheme.Fullscreen" parent="Theme.AppCompat.NoActionBar">
@@ -20,6 +21,14 @@
     <style name="ActionBarPopupThemeOverlay" parent="ThemeOverlay.AppCompat.Light" >
         <item name="android:background">@android:color/white</item>
         <item name="android:textColor">#000</item>
+    </style>
+
+    <style name="AppSearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="queryBackground">@android:color/transparent</item>
+        <item name="searchIcon">@android:drawable/ic_menu_search</item>
+        <item name="closeIcon">@android:drawable/ic_delete</item>
+        <item name="queryHint">@string/search_hint</item>
+        <item name="android:imeActionId">1</item>
     </style>
 
 </resources>

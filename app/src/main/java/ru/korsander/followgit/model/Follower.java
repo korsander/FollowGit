@@ -14,8 +14,6 @@ public class Follower {
     @SerializedName("avatar_url")
     @Expose
     private String avatar;
-    @Expose
-    private String url;
 
     public String getLogin() {
         return login;
@@ -30,14 +28,6 @@ public class Follower {
     }
 
     public void setAvatar(String avatar) {
-        this.avatar = avatar + "&size=" + Utils.getAvatarSize();
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
+        this.avatar = avatar + "&size=" + Utils.getAvatarSize(true);
     }
 }

@@ -24,6 +24,7 @@ public class FollowersAdapter extends RecyclerView.Adapter<FollowersAdapter.View
     private ArrayList<Follower> items;
     private ClickItemCallback callback;
     private int lastPosition = -1;
+    private int lastPage = -1;
 
     public FollowersAdapter() {
         items = new ArrayList<Follower>();
@@ -35,7 +36,7 @@ public class FollowersAdapter extends RecyclerView.Adapter<FollowersAdapter.View
         ViewHolder holder = new ViewHolder(view, new ViewHolder.OnVHClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                callback.onRVItemClick(items.get(position).getUrl());
+                callback.onRVItemClick(items.get(position).getLogin());
             }
         });
         return holder;
@@ -82,6 +83,14 @@ public class FollowersAdapter extends RecyclerView.Adapter<FollowersAdapter.View
 
     public void addItems(ArrayList<Follower> items) {
         this.items.addAll(items);
+    }
+
+    public int getLastPage() {
+        return lastPage;
+    }
+
+    public void setLastPage(int lastPage) {
+        this.lastPage = lastPage;
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {

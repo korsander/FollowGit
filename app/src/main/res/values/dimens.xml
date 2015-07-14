@@ -14,7 +14,8 @@
     <dimen name="list_item_avatar_size">40dp</dimen>
     <dimen name="list_item_avatar_padding_vertical">8dp</dimen>
 
-    <!-- Dialog paddings -->
+    <!-- Dialog user -->
     <dimen name="dialog_padding_border">24dp</dimen>
+    <dimen name="dialog_avatar_size">200dp</dimen>
 
 </resources>

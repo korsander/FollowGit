@@ -1,5 +1,6 @@
 package ru.korsander.followgit.rest;
 
+import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.squareup.okhttp.OkHttpClient;
 
@@ -29,11 +30,13 @@ public class RestClient {
 
     private static void initRestClient() {
         OkHttpClient client = new OkHttpClient();
+        Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd'T'HH:mm:ssZ").create();
         client.setConnectTimeout(Const.CONNECTION_TIMEOUT, TimeUnit.SECONDS);
         client.setReadTimeout(Const.READ_TIMEOUT, TimeUnit.SECONDS);
         RestAdapter adapter = new RestAdapter.Builder().setEndpoint(Const.API_PATH)
-                .setConverter(new GsonConverter(new GsonBuilder().create()))
-                .setClient(new OkClient(client)).setLogLevel(RestAdapter.LogLevel.FULL).build();
+                .setConverter(new GsonConverter(gson))
+                .setClient(new OkClient(client)).setLogLevel(RestAdapter.LogLevel.FULL)
+                .build();
         api = adapter.create(GithubApi.class);
     }
 }
